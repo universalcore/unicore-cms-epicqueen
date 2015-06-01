@@ -1,2 +1,2 @@
 #!/bin/bash
-py.test --verbose --cov ./unicorecmsgem unicorecmsgem
+py.test --verbose --cov ./unicorecmsepicqueen unicorecmsepicqueen
