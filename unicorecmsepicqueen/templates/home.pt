@@ -7,20 +7,20 @@
             <div id="banner">
                 <a href="/declaration/">
                     <condition tal:omit-tag="" tal:condition="localisation and localisation.image_host and localisation.image">
-                        <img alt="Welcome to the Girl Effect" src="${view.get_image_url(localisation.image_host, localisation.image, 320)}"/>
+                        <img alt="Welcome to Epic Queen" src="${view.get_image_url(localisation.image_host, localisation.image, 320)}"/>
                     </condition>
                     <condition tal:omit-tag="" tal:condition="not (localisation and localisation.image_host and localisation.image)">
-                        <img alt='Welcome to the Girl Effect' src="/static/img/banner.jpg" />
+                        <img alt='Welcome to the Epic Queen' src="/static/img/banner.jpg" />
                     </condition>
                 </a>
             </div>
         </div>
 
         <div class="what">
-            <div class="h1"><a href="/about/" i18n:translate="What Is The Girl Effect">What Is The Girl Effect</a></div>
+            <div class="h1"><a href="/about/" i18n:translate="What Is Epic Queen">What Is Epic Queen</a></div>
             <div class="listing">
-                <a href="/about/"><img alt='What is the Girl Effect' src="/static/img/what_is_girl_effect.png" /></a>
-                <div class="h2"><a href="/about/" i18n:translate="Learn more about The Girl Effect">Learn more about The Girl Effect</a></div>
+                <a href="/about/"><img alt='What is the Epic Queen' src="/static/img/what_is_girl_effect.png" /></a>
+                <div class="h2"><a href="/about/" i18n:translate="Learn more about Epic Queen">Learn more about Epic Queen</a></div>
                 <p i18n:translate="And spread the word">And spread the word</p>
                 <div class="clr"></div>
             </div>
