@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE 1.0\n"
-"POT-Creation-Date: 2015-06-01 16:05+0200\n"
+"POT-Creation-Date: 2015-06-01 20:01+0200\n"
 "PO-Revision-Date: 2015-06-01 16:05+0200\n"
 "Last-Translator: tonym <tonym@tonym-lap>\n"
 "Language-Team: Language eng\n"
@@ -15,14 +15,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Lingua 3.10\n"
 
-#. Default: What Is The Girl Effect
+#. Default: What Is Epic Queen
 #: unicorecmsepicqueen/templates/home.pt:20
-msgid "What Is The Girl Effect"
+msgid "What Is Epic Queen"
 msgstr ""
 
-#. Default: Learn more about The Girl Effect
+#. Default: Learn more about Epic Queen
 #: unicorecmsepicqueen/templates/home.pt:23
-msgid "Learn more about The Girl Effect"
+msgid "Learn more about Epic Queen"
 msgstr ""
 
 #. Default: And spread the word
@@ -126,6 +126,6 @@ msgid "Next"
 msgstr ""
 
 #. Default: Home
-#: unicorecmsepicqueen/templates/base.pt:33
+#: unicorecmsepicqueen/templates/base.pt:32
 msgid "Home"
 msgstr ""
