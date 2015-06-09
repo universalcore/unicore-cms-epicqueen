@@ -64,7 +64,6 @@
                 <a href="/content/list/${cat.uuid}/"><span i18n:translate="More">More</span> ${cat.title}</a>
             </div>
         </div>
-        <div>${localisation.locale}</div>
         <div class="declaration" tal:define="page view.get_page(None, 'more-information', localisation.locale)">
             <condition tal:omit-tag="" tal:condition="page">
             <div class="h1"><a href="/more-information/" i18n:translate="More information">More information</a></div>
