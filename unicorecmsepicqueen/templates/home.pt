@@ -2,28 +2,31 @@
      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
      i18n:domain="unicorecmsepicqueen">
     <div metal:fill-slot="content">
+    <div tal:define="localisation view.get_localisation()" tal:omit-tag="">
 
-        <div tal:define="localisation view.get_localisation()" tal:omit-tag="">
-            <div id="banner">
-                <a href="/declaration/">
-                    <condition tal:omit-tag="" tal:condition="localisation and localisation.image_host and localisation.image">
-                        <img alt="Welcome to Epic Queen" src="${view.get_image_url(localisation.image_host, localisation.image, 320)}"/>
-                    </condition>
-                    <condition tal:omit-tag="" tal:condition="not (localisation and localisation.image_host and localisation.image)">
-                        <img alt='Welcome to the Epic Queen' src="/static/img/banner.jpg" />
-                    </condition>
-                </a>
-            </div>
+        <div id="banner">
+            <a href="/about/">
+                <condition tal:omit-tag="" tal:condition="localisation and localisation.image_host and localisation.image">
+                    <img alt="Welcome to Epic Queen" src="${view.get_image_url(localisation.image_host, localisation.image, 320)}"/>
+                </condition>
+                <condition tal:omit-tag="" tal:condition="not (localisation and localisation.image_host and localisation.image)">
+                    <img alt='Welcome to the Epic Queen' src="/static/img/banner.jpg" />
+                </condition>
+            </a>
         </div>
 
-        <div class="what">
-            <div class="h1"><a href="/about/" i18n:translate="What Is Epic Queen">What Is Epic Queen</a></div>
-            <div class="listing">
-                <a href="/about/"><img alt='What is the Epic Queen' src="/static/img/what_is_girl_effect.png" /></a>
-                <div class="h2"><a href="/about/" i18n:translate="Learn more about Epic Queen">Learn more about Epic Queen</a></div>
-                <p i18n:translate="And spread the word">And spread the word</p>
+        <div class="what" tal:define="page view.get_page(None, 'about', localisation)">
+        <condition tal:omit-tag="" tal:condition="page">
+            <div class="h1"><a href="/about/" i18n:translate="Acerca de Epic Queen">Acerca de Epic Queen</a></div>
+            <div tal:attributes="{'class':'listing'} if page.image_host and page.image else {'class': 'listing no-pic'}">
+                <condition tal:omit-tag="" tal:condition="page.image_host and page.image">
+                     <img alt="${page.title}" src="${view.get_image_url(page.image_host, page.image, 45, 45)}"/>
+                </condition>
+                <div class="h2"><a href="/about/">${page.title}</a></div>
+                <p>${page.description}</p>
                 <div class="clr"></div>
             </div>
+        </condition>
         </div><!--/what-->
 
         <div class="articles latest" tal:condition="view.get_featured_pages()">
@@ -62,15 +65,20 @@
             </div>
         </div>
 
-        <div class="declaration">
-            <div class="h1"><a href="/declaration/" i18n:translate="The Girl Declaration">The Girl Declaration</a></div>
-            <div class="listing">
-                <a href="/declaration/"><img alt='Girl Declaration' src="/static/img/girl_declaration.png" /></a>
-                <div class="h2"><a href="/declaration/" i18n:translate="Read It Now.">Read It Now.</a></div>
-                <p i18n:translate="And share it with other girls">And share it with other girls</p>
+        <div class="declaration" tal:define="page view.get_page(None, 'more-information', localisation)">
+            <condition tal:omit-tag="" tal:condition="page">
+            <div class="h1"><a href="/more-information/" i18n:translate="More information">More information</a></div>
+            <div tal:attributes="{'class':'listing'} if page.image_host and page.image else {'class': 'listing no-pic'}">
+                <condition tal:omit-tag="" tal:condition="page.image_host and page.image">
+                     <img alt="${page.title}" src="${view.get_image_url(page.image_host, page.image, 45, 45)}"/>
+                </condition>
+                <div class="h2"><a href="/about/">${page.title}</a></div>
+                <p>${page.description}</p>
                 <div class="clr"></div>
             </div>
+            </condition>
             <div class="pagination"><a href="/contact/" class="contact" i18n:translate="Contact">Contact</a> | <a href="/terms/" class="terms" i18n:translate="Terms &amp; Conditions">Terms &amp; Conditions</a> | <a href="/tips/" class="terms" i18n:translate="Tips on Use">Tips on Use</a></div>
         </div><!--/declaration-->
+    </div>
     </div>
 </div>
