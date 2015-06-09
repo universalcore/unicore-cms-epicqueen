@@ -15,7 +15,7 @@
             </a>
         </div>
 
-        <div class="what" tal:define="page view.get_page(None, 'about', localisation)">
+        <div class="what" tal:define="page view.get_page(None, 'about', localisation.locale)">
         <condition tal:omit-tag="" tal:condition="page">
             <div class="h1"><a href="/about/" i18n:translate="Acerca de Epic Queen">Acerca de Epic Queen</a></div>
             <div tal:attributes="{'class':'listing'} if page.image_host and page.image else {'class': 'listing no-pic'}">
@@ -64,8 +64,8 @@
                 <a href="/content/list/${cat.uuid}/"><span i18n:translate="More">More</span> ${cat.title}</a>
             </div>
         </div>
-
-        <div class="declaration" tal:define="page view.get_page(None, 'more-information', localisation)">
+        <div>${localisation.locale}</div>
+        <div class="declaration" tal:define="page view.get_page(None, 'more-information', localisation.locale)">
             <condition tal:omit-tag="" tal:condition="page">
             <div class="h1"><a href="/more-information/" i18n:translate="More information">More information</a></div>
             <div tal:attributes="{'class':'listing'} if page.image_host and page.image else {'class': 'listing no-pic'}">
